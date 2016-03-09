@@ -13,7 +13,6 @@ object Build extends sbt.Build with BuildExtra {
     name := "scalapact-plugin",
     resolvers += "ITV Repo" at " http://itvrepos.artifactoryonline.com/itvrepos/cps-libs",
     publishTo := Some("Artifactory Realm" at "https://itvrepos.artifactoryonline.com/itvrepos/cps-libs"),
-    version := "0.1.2-SNAPSHOT",
     sbtVersion in Global := "0.13.11",
     scalaVersion in Global := "2.10.6",
     scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature"),
