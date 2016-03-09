@@ -4,6 +4,10 @@ import Keys._
 object Build extends sbt.Build with BuildExtra {
   lazy val sbtIdea = Project("scalapact-plugin", file("."), settings = mainSettings)
 
+  resolvers += "ITV Repo" at " http://itvrepos.artifactoryonline.com/itvrepos/cps-libs"
+
+  publishTo := Some("Artifactory Realm" at "https://itvrepos.artifactoryonline.com/itvrepos/cps-libs")
+
   lazy val mainSettings: Seq[Def.Setting[_]] = Seq(
     sbtPlugin := true,
     organization := "com.itv.plugins",
