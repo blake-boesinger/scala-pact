@@ -3,8 +3,6 @@ name := "scalapact-scalatest"
 
 organization := "com.itv"
 
-version := "0.1.2-SNAPSHOT"
-
 scalaVersion := "2.11.7"
 
 libraryDependencies ++= Seq(
