@@ -60,7 +60,7 @@ object Verifier {
     requestResult.flatMap(matchResponse(interactions))
 
   private lazy val doRequest: Arguments => Option[ProviderState] => InteractionRequest => \/[String, InteractionResponse] = arguments => maybeProviderState => interactionRequest => {
-    val baseUrl = "http://" + arguments.host + ":" + arguments.port
+    val baseUrl = s"${arguments.protocol}://" + arguments.host + ":" + arguments.port
 
     try {
       if(maybeProviderState.isDefined) {
