@@ -20,13 +20,21 @@ libraryDependencies ++= Seq(
   "org.http4s" %% "http4s-argonaut"     % http4sVersion
 )
 
+// publishTo := {
+//   val nexus = "https://oss.sonatype.org/"
+//   if (isSnapshot.value)
+//     Some("snapshots" at nexus + "content/repositories/snapshots")
+//   else
+//     Some("releases"  at nexus + "service/local/staging/deploy/maven2")
+// }
+
 publishTo := {
-  val nexus = "https://oss.sonatype.org/"
-  if (isSnapshot.value)
-    Some("snapshots" at nexus + "content/repositories/snapshots")
-  else
-    Some("releases"  at nexus + "service/local/staging/deploy/maven2")
-}
+  val artifactory = "https://itvrepos.artifactoryonline.com/itvrepos/oasvc-ivy"
+   if (isSnapshot.value)
+    Some("Artifactory Realm" at artifactory)
+   else
+    Some("Artifactory Realm" at artifactory + ";build.timestamp=" + new java.util.Date().getTime)
+ }
 
 publishMavenStyle := true
 
